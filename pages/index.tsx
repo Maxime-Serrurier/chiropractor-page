@@ -1,7 +1,13 @@
+// Libraries
 import Head from 'next/head';
 import Image from 'next/image';
+
+// Components
 import Header from '../Components/Header';
+import Hero from '../Components/Hero';
+
 export default function Home() {
+  // JSX
   return (
     <>
       <Head>
@@ -20,9 +26,12 @@ export default function Home() {
         />
       </Head>
       <main>
-        <header className='p-4'>
+        <header className='p-8 bg-[#3D9BE9]'>
           <Header />
         </header>
+        <section className=''>
+          <Hero />
+        </section>
       </main>
     </>
   );
