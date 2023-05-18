@@ -5,8 +5,12 @@ import Image from 'next/image';
 // Components
 import Header from '../Components/Header';
 import Hero from '../Components/Hero';
+import axios from 'axios';
 
-export default function Home() {
+type Props = { navigationItems: [{ title: string }] };
+
+export default function Home(navigationItems: Props) {
+  console.log(navigationItems);
   // JSX
   return (
     <>
@@ -35,4 +39,23 @@ export default function Home() {
       </main>
     </>
   );
+}
+
+export async function getStaticProps() {
+  try {
+    const response = await axios.get(
+      'http://localhost:3000/api/navigationItems'
+    );
+    const navigationItems = response.data.navigationItems;
+
+    return {
+      props: { navigationItems },
+    };
+  } catch (error) {
+    console.log(error);
+
+    return {
+      props: { navigationItems: null },
+    };
+  }
 }

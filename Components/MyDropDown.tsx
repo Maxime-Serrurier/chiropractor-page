@@ -6,7 +6,7 @@ import {
   whoItems,
   consultationItems,
   chiropracticItems,
-} from '../data/NavigationItems';
+} from '../data/data';
 import Link from 'next/link';
 
 type Props = { title: string };
@@ -30,7 +30,7 @@ function MyDropdown({ title }: Props) {
         setMenuDisplayed(menuItemsArray);
         setSlugsArray(slugItems);
       });
-      slugsArray?.map((slug) => setSlug(slug));
+      slugsArray?.map((slug) => slug);
     }
     if (title === 'Pour qui ?') {
       let menuItemsArray: any = [];
@@ -66,14 +66,16 @@ function MyDropdown({ title }: Props) {
         </Menu.Button>
       </div>
 
-      <Menu.Items className='absolute right-0 w-56 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'>
+      <Menu.Items className='absolute right-0 w-56 mt-2 origin-top-right bg-white divide-y divide-[#B1D7F6] rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'>
         {menuDisplayed.map((item) => (
           <Menu.Item key={item}>
             {({ active }) => (
               <a
                 href={`/${slug}`}
                 className={`${
-                  active ? 'bg-[#B3B3B3] text-white' : 'text-gray-900'
+                  active
+                    ? 'bg-[#B1D7F6]/80 text-white'
+                    : 'text-gray-900'
                 } group flex w-full items-center rounded-md px-4 py-2 text-sm`}
               >
                 {item}

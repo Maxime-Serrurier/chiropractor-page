@@ -1,7 +1,7 @@
 // Libraries
 import Image from 'next/image';
 import React from 'react';
-import { navigationItems } from '../data/NavigationItems';
+import { navigationItems } from '../data/data';
 import Link from 'next/link';
 
 // Component
@@ -32,15 +32,15 @@ const Hero = (props: Props) => {
       <nav className='py-4 bg-[#3D9BE9]/40'>
         <ul className='text-[#FFF] flex justify-center gap-x-8 text-xl drop-shadow-xl'>
           <li>
-            <Link href='/'></Link>Accueil
+            <Link href='/'>Accueil</Link>
           </li>
-          <li></li>
-          <li></li>
           {navigationItems?.map((navigationItem, index) => (
             <li key={index}>
               <MyDropdown title={navigationItem.title} />
             </li>
           ))}
+          <li>Prendre rendez-vous</li>
+          <li>Contact</li>
         </ul>
       </nav>
     </>

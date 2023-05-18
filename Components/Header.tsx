@@ -14,6 +14,7 @@ const Header = (props: Props) => {
         <ul className='flex gap-2'>
           <li>
             <SocialIcon
+              className='hover:opacity-80'
               bgColor='#FFF'
               style={{ height: 25, width: 25 }}
               url='https://facebook.fr'
@@ -21,6 +22,7 @@ const Header = (props: Props) => {
           </li>
           <li>
             <SocialIcon
+              className='hover:opacity-80'
               bgColor='#FFF'
               style={{ height: 25, width: 25 }}
               url='https://instagram.fr'
@@ -28,6 +30,7 @@ const Header = (props: Props) => {
           </li>
           <li>
             <SocialIcon
+              className='hover:opacity-80'
               bgColor='#FFF'
               network='email'
               url='mailto:ludivine.serrurier@gmail.com'
