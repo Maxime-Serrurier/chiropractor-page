@@ -4,12 +4,12 @@ import { chiropracticItems } from '../../data/data';
 import { ChiropracticItems } from '../../typings';
 
 type Data = {
-  chiropracticItems: ChiropracticItems;
+    chiropracticItems: ChiropracticItems[];
 };
 
 export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>
+    req: NextApiRequest,
+    res: NextApiResponse<Data>
 ) {
-  res.status(200).json({ chiropracticItems });
+    res.status(200).json({ chiropracticItems });
 }

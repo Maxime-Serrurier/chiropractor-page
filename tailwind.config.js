@@ -1,19 +1,21 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
+const withMT = require('@material-tailwind/react/utils/withMT');
 
-    // Or if using `src` directory:
-    './src/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
-  theme: {
-    extend: {
-      backgroundImage: {
-        header: "url('/assets/colonne.png')",
-      },
+/** @type {import('tailwindcss').Config} */
+module.exports = withMT({
+    content: [
+        './app/**/*.{js,ts,jsx,tsx,mdx}',
+        './pages/**/*.{js,ts,jsx,tsx,mdx}',
+        './components/**/*.{js,ts,jsx,tsx,mdx}',
+
+        // Or if using `src` directory:
+        './src/**/*.{js,ts,jsx,tsx,mdx}',
+    ],
+    theme: {
+        extend: {
+            backgroundImage: {
+                header: "url('/assets/colonne.png')",
+            },
+        },
     },
-  },
-  plugins: [],
-};
+    plugins: [],
+});

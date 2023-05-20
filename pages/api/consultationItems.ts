@@ -4,12 +4,12 @@ import { consultationItems } from '../../data/data';
 import { ConsultationItems } from '../../typings';
 
 type Data = {
-  consultationItems: ConsultationItems;
+    consultationItems: ConsultationItems[];
 };
 
 export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>
+    req: NextApiRequest,
+    res: NextApiResponse<Data>
 ) {
-  res.status(200).json({ consultationItems });
+    res.status(200).json({ consultationItems });
 }
