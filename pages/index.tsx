@@ -7,6 +7,8 @@ import Navigation from '../Components/Navigation';
 import axios from 'axios';
 import { NavigationItems } from '../typings';
 import CarouselImage from '../Components/CarouselImage';
+import Chiropractic from '../Components/Chiropractic';
+import Mdd from '../Components/MDD';
 
 type Props = { navigationItems: NavigationItems[] };
 
@@ -27,12 +29,20 @@ export default function Home({ navigationItems }: Props) {
                 <link rel='icon' href='/favicon.ico' />
             </Head>
             <main>
-                <header className='p-8 bg-[#3D9BE9]'>
-                    <Header />
-                </header>
                 <section>
-                    <Navigation navigationItems={navigationItems} />
+                    <header className='p-4 bg-[#3D9BE9]'>
+                        <Header />
+                    </header>
+                    <section>
+                        <Chiropractic />
+                    </section>
+                    <section>
+                        <Navigation
+                            navigationItems={navigationItems}
+                        />
+                    </section>
                 </section>
+
                 <section className='w-full'>
                     <CarouselImage />
                 </section>
