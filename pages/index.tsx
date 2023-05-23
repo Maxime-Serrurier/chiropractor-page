@@ -8,7 +8,6 @@ import axios from 'axios';
 import { NavigationItems } from '../typings';
 import CarouselImage from '../Components/CarouselImage';
 import Chiropractic from '../Components/Chiropractic';
-import Mdd from '../Components/MDD';
 
 type Props = { navigationItems: NavigationItems[] };
 

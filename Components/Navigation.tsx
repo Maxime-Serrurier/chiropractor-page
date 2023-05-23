@@ -14,8 +14,8 @@ const Hero = ({ navigationItems }: Props) => {
     // JSX
     return (
         <>
-            <nav className='py-4 bg-[#3D9BE9]/40'>
-                <ul className='text-[#FFF] flex justify-center gap-x-8 text-xl drop-shadow-xl'>
+            <nav className='py-2 bg-[#3D9BE9]/40'>
+                <ul className='text-[#FFF] flex justify-center items-center gap-x-8 text-xl drop-shadow-xl'>
                     <li>
                         <Link href='/'>Accueil</Link>
                     </li>

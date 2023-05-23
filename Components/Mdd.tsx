@@ -5,8 +5,6 @@ import {
     MenuList,
     MenuItem,
     Button,
-    Card,
-    Typography,
 } from '@material-tailwind/react';
 import {
     ChevronDownIcon,
@@ -66,7 +64,7 @@ export default function Mdd({ title }: Props) {
                 <Button
                     {...triggers}
                     variant='text'
-                    className='flex items-center gap-3 text-base font-normal capitalize tracking-normal'
+                    className='flex items-center gap-3'
                 >
                     {title}
                     <ChevronDownIcon
@@ -79,13 +77,13 @@ export default function Mdd({ title }: Props) {
             </MenuHandler>
             <MenuList
                 {...triggers}
-                className='hidden w-[36rem] grid-cols-7 gap-3 overflow-visible lg:grid'
+                className='hidden w-[36rem] grid-cols-7 gap-3 overflow-visible lg:grid hover:bg-[#B1D7F6]/80 hover:text-white'
             >
                 {menuDisplayed?.map((item: Item, index) => (
                     <MenuItem key={index}>
                         <Link
                             href={`/${item.slug}`}
-                            className={`bg-[#B1D7F6]/80 text-white group flex w-full items-center rounded-md px-4 py-2 text-sm`}
+                            className='group flex flex-col w-full items-center rounded-md px-4 py-2 text-sm'
                         >
                             {item.title}
                         </Link>
