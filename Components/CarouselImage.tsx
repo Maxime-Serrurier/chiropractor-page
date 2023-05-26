@@ -1,33 +1,52 @@
 import { Carousel } from '@material-tailwind/react';
+import Image from 'next/image';
+import Chiropractic from './Chiropractic';
 
 export default function CarouselImage() {
-    return (
+  return (
+    <>
+      <div className='relative flex items-center justify-center'>
         <Carousel
-            autoplay
-            loop
-            transition={{ duration: 1.5 }}
-            className='h-[500px]'
+          autoplay
+          loop
+          transition={{ duration: 1 }}
+          className='md:h-[500px]  z-0'
         >
-            <img
-                src='./assets/colonne-vertebrale.jpg'
-                alt='image 1'
-                className='h-full w-full object-cover'
-            />
-            <img
-                src='./assets/chiropraxie.jpg'
-                alt='image 2'
-                className='h-full w-full object-cover'
-            />
-            <img
-                src='./assets/jeune-femme.jpg'
-                alt='image 3'
-                className='h-full w-full object-cover'
-            />
-            <img
-                src='./assets/patient-traitement.jpg'
-                alt='image 3'
-                className='h-full w-full object-cover'
-            />
+          <Image
+            src='/assets/colonne-vertebrale.jpg'
+            alt='image 1'
+            className='object-cover w-full h-full'
+            width={1000}
+            height={300}
+            quality={100}
+          />
+          <Image
+            src='/assets/chiropraxie.jpg'
+            alt='image 2'
+            className='object-cover w-full h-full'
+            width={1000}
+            height={300}
+            quality={100}
+          />
+          <Image
+            src='/assets/jeune-femme.jpg'
+            alt='image 3'
+            className='object-cover w-full h-full'
+            width={1000}
+            height={300}
+            quality={100}
+          />
+          <Image
+            src='/assets/patient-traitement.jpg'
+            alt='image 3'
+            className='object-cover w-full h-full'
+            width={1000}
+            height={300}
+            quality={100}
+          />
         </Carousel>
-    );
+        <Chiropractic />
+      </div>
+    </>
+  );
 }
