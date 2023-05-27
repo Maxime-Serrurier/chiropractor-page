@@ -3,10 +3,11 @@ import Head from 'next/head';
 
 // Components
 import Header from '../Components/Header';
-import Navigation from '../Components/Navigation';
+// import Navigation from '../Components/Navigation';
 import axios from 'axios';
 import { NavigationItems } from '../typings';
 import CarouselImage from '../Components/CarouselImage';
+import Cards from '../Components/Cards';
 
 type Props = { navigationItems: NavigationItems[] };
 
@@ -27,14 +28,28 @@ export default function Home({ navigationItems }: Props) {
                 <link rel='icon' href='/favicon.ico' />
             </Head>
             <main>
-                <header className='p-8 bg-[#3D9BE9]'>
-                    <Header />
-                </header>
-                <section>
-                    <Navigation navigationItems={navigationItems} />
+                <section className='flex flex-col'>
+                    <header className='absolute z-20 top-0 py-2 px-4 bg-[#3D9BE9] w-full'>
+                        <Header />
+                    </header>
+                    <section className='relative w-full h-screen'>
+                        <CarouselImage />
+                    </section>
+                    {/* <section>
+            <Navigation navigationItems={navigationItems} />
+          </section> */}
                 </section>
-                <section className='w-full'>
-                    <CarouselImage />
+                <section className='h-screen flex flex-col items-center justify-center'>
+                    <h3 className='w-[60%] text-4xl text-blue-200 drop-shadow-md font-semibold italic container pb-12 mx-auto text-center'>
+                        "Examinez de près la colonne pour trouver la
+                        cause de la maladie" Hippocrate
+                    </h3>
+                    <div className='grid lg:grid-cols-4 md:grid-cols-3 md:max-w-[90%] mx-auto gap-4 p-4'>
+                        <Cards />
+                        <Cards />
+                        <Cards />
+                        <Cards />
+                    </div>
                 </section>
             </main>
         </>

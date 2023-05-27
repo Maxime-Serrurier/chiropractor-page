@@ -65,7 +65,7 @@ function MyDropdown({ title }: Props) {
                 </Menu.Button>
             </div>
 
-            <Menu.Items className='absolute right-0 w-56 mt-2 origin-top-right bg-white divide-y divide-[#B1D7F6] rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'>
+            <Menu.Items className='absolute right-0 w-56 mt-2 origin-top-right bg-white divide-y divide-[#B1D7F6] rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-20'>
                 {menuDisplayed?.map((item: Item, index) => (
                     <Menu.Item key={index}>
                         {({ active }) => (

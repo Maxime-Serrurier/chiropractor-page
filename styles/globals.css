@@ -9,3 +9,7 @@
     font-family: Raleway;
   }
 }
+
+li {
+  @apply hover:text-blue-500;
+}
