@@ -1,3 +1,4 @@
+// Libraries
 import {
     Card,
     CardHeader,
@@ -6,38 +7,50 @@ import {
     Button,
 } from '@material-tailwind/react';
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
+import Link from 'next/link';
 
-export default function Example() {
+type Props = {
+    title: string;
+    summary: string;
+    slug: string;
+    image: string;
+};
+
+export default function Cards({
+    title,
+    summary,
+    slug,
+    image,
+}: Props) {
     return (
         <>
             <Card className='flex-col w-full max-w-[48rem]'>
                 <CardHeader
                     shadow={false}
                     floated={false}
-                    className='shrink-0 m-0'
+                    className='shrink-0 m-0 h-36'
                 >
                     <img
-                        src='/assets/colonne-vertebrale.jpg'
+                        src={`/assets/${image}.jpg`}
                         alt='image'
-                        className='object-cover'
+                        className='object-cover object-center'
                     />
                 </CardHeader>
-                <CardBody className='p-4'>
+                <CardBody className='p-4 flex-1 flex flex-col justify-between'>
                     <Typography
                         variant='h2'
                         color='blue'
                         className='mb-2 text-xl'
                     >
-                        La Chiropraxie
+                        {title}
                     </Typography>
                     <Typography
                         color='gray'
                         className='font-normal pb-2 text-xs'
                     >
-                        1ère profession de santé manuelle et 3ème
-                        profession de santé, au niveau international.
+                        {summary}
                     </Typography>
-                    <a href='#' className='inline-block'>
+                    <Link href={slug} className='inline-block'>
                         <Button
                             variant='text'
                             className='flex items-center gap-2 text-xs border border-blue-300'
@@ -48,7 +61,7 @@ export default function Example() {
                                 className='w-4 h-4'
                             />
                         </Button>
-                    </a>
+                    </Link>
                 </CardBody>
             </Card>
         </>

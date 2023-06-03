@@ -7,6 +7,7 @@ import axios from 'axios';
 import { CardsItems } from '../typings';
 import CarouselImage from '../Components/CarouselImage';
 import Cards from '../Components/Cards';
+import { cardsItems } from '../data/data';
 
 type Props = { cardsItems: CardsItems[] };
 
@@ -41,10 +42,15 @@ export default function Home({}: Props) {
                         cause de la maladie" Hippocrate
                     </h3>
                     <div className='grid lg:grid-cols-4 md:grid-cols-3 md:max-w-[90%] mx-auto gap-4 p-4'>
-                        <Cards />
-                        <Cards />
-                        <Cards />
-                        <Cards />
+                        {cardsItems?.map((card) => (
+                            <Cards
+                                key={card.slug}
+                                title={card.title}
+                                summary={card.summary}
+                                slug={card.slug}
+                                image={card.image}
+                            />
+                        ))}
                     </div>
                 </section>
             </main>
@@ -55,18 +61,18 @@ export default function Home({}: Props) {
 export async function getStaticProps() {
     try {
         const response = await axios.get(
-            'http://localhost:3000/api/navigationItems'
+            'http://localhost:3000/api/cardsItems'
         );
-        const navigationItems = response.data.navigationItems;
+        const cardsItems = response.data.cardsItems;
 
         return {
-            props: { navigationItems },
+            props: { cardsItems },
         };
     } catch (error) {
         console.log(error);
 
         return {
-            props: { navigationItems: null },
+            props: { cardsItems: null },
         };
     }
 }
