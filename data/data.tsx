@@ -1,12 +1,18 @@
 export const cardsItems = [
     {
         title: 'La Chiropraxie',
+        summary:
+            '1ère profession de santé manuelle et 3ème profession de santé, au niveau international.',
     },
     {
-        title: 'Pour qui ?',
+        title: 'La chiro pour tous ?',
+        summary:
+            "Elle est indiquée pour tous. Il n'y a pas d'âge pour prendre soin de santé et de sa colonne.",
     },
     {
-        title: 'Consultation',
+        title: 'Un évènement sportif ?',
+        summary:
+            'Vous souhaitez disposer de chiropracteurs bénévoles pour vos sportifs ?',
     },
 ];
 
