@@ -13,8 +13,6 @@ const Chiropractic = (props: Props) => {
                     <Image
                         src='/assets/chiro.webp'
                         alt='Chiropractor'
-                        // width={window.innerWidth >= 376 ? 200 : 100}
-                        // height={window.innerWidth >= 376 ? 200 : 100}
                         width={200}
                         height={200}
                         quality={100}

@@ -3,15 +3,14 @@ import Head from 'next/head';
 
 // Components
 import Header from '../Components/Header';
-// import Navigation from '../Components/Navigation';
 import axios from 'axios';
-import { NavigationItems } from '../typings';
+import { CardsItems } from '../typings';
 import CarouselImage from '../Components/CarouselImage';
 import Cards from '../Components/Cards';
 
-type Props = { navigationItems: NavigationItems[] };
+type Props = { cardsItems: CardsItems[] };
 
-export default function Home({ navigationItems }: Props) {
+export default function Home({}: Props) {
     // JSX
     return (
         <>
@@ -35,9 +34,6 @@ export default function Home({ navigationItems }: Props) {
                     <section className='relative w-full h-screen'>
                         <CarouselImage />
                     </section>
-                    {/* <section>
-            <Navigation navigationItems={navigationItems} />
-          </section> */}
                 </section>
                 <section className='h-screen flex flex-col items-center justify-center'>
                     <h3 className='w-[60%] text-4xl text-blue-200 drop-shadow-md font-semibold italic container pb-12 mx-auto text-center'>

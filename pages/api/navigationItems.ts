@@ -1,14 +1,14 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { navigationItems } from '../../data/data';
-import { NavigationItems } from '../../typings';
+import { cardsItems } from '../../data/data';
+import { CardsItems } from '../../typings';
 type Data = {
-    navigationItems: NavigationItems[];
+    cardsItems: CardsItems[];
 };
 
 export default function handler(
     req: NextApiRequest,
     res: NextApiResponse<Data>
 ) {
-    res.status(200).json({ navigationItems });
+    res.status(200).json({ cardsItems });
 }

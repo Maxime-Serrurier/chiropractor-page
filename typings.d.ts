@@ -1,4 +1,4 @@
-export interface NavigationItems {
+export interface CardsItems {
     title: string;
 }
 
